@@ -1,0 +1,7 @@
+<div style="display: flex;flex-direction: column; background-color: lightblue;padding: 0.5rem;" (click)="selectNote()">
+    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+        <h3>{{noteItem.title}}</h3>
+        <button (click)="deleteNote(noteItem.id)">Delete</button>
+    </div>
+    <p>{{noteItem.timestamp}}</p>
+</div>

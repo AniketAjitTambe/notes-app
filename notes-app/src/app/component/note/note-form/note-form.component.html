@@ -1,0 +1,7 @@
+<div>
+    <form [formGroup]="noteFormGroup" (ngSubmit)="onSubmit(noteFormGroup.value)">
+        <input type="text" formControlName="title" placeholder="Enter Title">
+        <input type="text" formControlName="body" placeholder="Enter Message">
+        <button type="submit">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+@if(!editUser){<div>
+    <p>Name: {{currentUser.userName}}</p>
+    <button (click)="toggleEdit()">Edit User</button>
+</div>}
+@else {
+<form [formGroup]="userEditForm" (ngSubmit)="submitUserEditForm(userEditForm.value)">
+    <input type="text" formControlName="userName" placeholder="Enter new username...">
+    <button type="submit">Submit</button>
+</form>
+}
+<div>
+</div>

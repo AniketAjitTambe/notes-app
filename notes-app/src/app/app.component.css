@@ -1,0 +1,19 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header-container {
+  height: 10%;
+  align-items: center;
+}
+
+.body-container {
+  height: 80%;
+}
+
+.footer-container {
+  height: 10%;
+  align-items: center;
+}

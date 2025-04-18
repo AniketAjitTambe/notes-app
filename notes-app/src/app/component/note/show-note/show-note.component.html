@@ -1,0 +1,34 @@
+<div class="note-container" style="background-color: lightgreen; align-items:stretch;height: 100%; padding: 1rem;">
+    <div class="note-action-menu" style="display: flex;flex-direction: row;">
+        @if(isEditable){
+        <button class="material-symbols-outlined" (click)="saveNote()" type="submit" form="editForm">
+            save
+        </button>
+        }
+        @else {
+        <button class="material-symbols-outlined" (click)="toggleEdit()">
+            edit </button>
+        }
+        <button class="material-symbols-outlined" (click)="deleteNote(selectedNote.id)">
+            delete
+        </button>
+    </div>
+    <div class="note-header-wrapper" style="display: flex;flex-direction: row;justify-content: space-between;">
+        @if(!isEditable){
+        <h2 class="note-title">{{tempNote.title}}</h2>
+        <div class="note-body" style="min-height: 100%;">{{tempNote.body}}
+        </div>
+        }
+        @else {
+        <form #editForm="ngForm">
+            <input type="text" [value]="selectedNote.title" name='title' [(ngModel)]="tempNote.title">
+            <input type="text" [value]="selectedNote.body" name='body' [(ngModel)]="tempNote.body">
+        </form>
+        }
+
+    </div>
+    <div class="note-meta" style="display: flex;flex-direction: row; justify-content: space-between;">
+        <h5 class="note-author">{{userName}}</h5>
+        <h5 class="note-timestamp">{{tempNote.timestamp}}</h5>
+    </div>
+</div>
